@@ -1,0 +1,31 @@
+# Day 19: OCI Lab Options - Free Tier vs. Paid Lab Subscription
+
+This lesson outlines the process for purchasing an Oracle University (OU) Self-paced Lab Subscription, which is one of two primary ways to get hands-on practice with OCI.
+
+### Comparing the Two Lab Options
+
+#### 1. Using Your Own OCI Free Tier Account (Recommended for this course)
+-   **Cost:** Free.
+-   **Process:** You sign up once at `cloud.oracle.com/free`. This gives you your own persistent OCI tenancy with a set of "Always Free" resources and a 30-day trial with credits.
+-   **Pros:**
+    -   It's free of cost.
+    -   You learn in a real-world environment that is yours to keep and explore.
+    -   It provides a more authentic experience of setting up resources from scratch.
+-   **Cons:**
+    -   You are responsible for creating and cleaning up your resources.
+
+#### 2. Purchasing an Oracle University Self-paced Lab Subscription (Optional)
+-   **Cost:** Paid (e.g., $29/month, as shown in the video).
+-   **Process:**
+    1.  Purchase the subscription from `education.oracle.com`.
+    2.  After the order is processed, a **"Lab" tab** will appear in your course on `mylearn.oracle.com`.
+    3.  From this tab, you can click **"Request Lab"**.
+    4.  Oracle University then provisions a temporary, pre-configured OCI environment specifically for that lab exercise. This can take up to 20 minutes.
+    5.  You receive an email when the lab is ready.
+-   **Pros:**
+    -   The environment is pre-configured, which can save time on initial setup.
+-   **Cons:**
+    -   It has an associated cost.
+    -   The lab environment is temporary and is deleted after you are finished with it.
+
+**Conclusion:** For the OCI Foundations certification, the OCI Free Tier is the ideal and recommended platform for completing all hands-on activities. The paid subscription is not necessary.
