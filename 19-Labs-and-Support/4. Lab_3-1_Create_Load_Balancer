@@ -1,0 +1,27 @@
+# Day 19: Lab 3-1 - Networking: OCI Load Balancer
+
+This lab provides a hands-on exercise for creating and configuring a public load balancer to distribute traffic across two backend web servers.
+
+### Objective
+To build a highly available and secure web application architecture using a public load balancer and private backend servers.
+
+### Architecture Overview
+The lab implements a classic and secure three-tier network architecture:
+-   A **VCN** with a public and a private subnet.
+-   A **public subnet** hosts the **Load Balancer**, which acts as the single entry point for all user traffic from the internet.
+-   A **private subnet** hosts the two backend **web servers**, shielding them from direct access from the internet.
+
+### Summary of Lab Tasks
+
+1.  **Create a Virtual Cloud Network (VCN):** The first step is to use the VCN Wizard to quickly provision a network with the required public and private subnets.
+2.  **Create Two Compute Instances:** Launch two identical web servers. These instances must be placed in the **private subnet**. A startup script will likely be used to install a simple web server on each.
+3.  **Create a Load Balancer:**
+    -   Provision a new **public, Layer 7 Load Balancer**.
+    -   **Placement:** The load balancer itself must be placed in the **public subnet** to be accessible from the internet.
+    -   **Backend Set:** The two web server instances from the private subnet are added as backends.
+    -   **Health Check:** A health check policy is configured to ensure the load balancer only sends traffic to healthy, responsive backend servers.
+    -   **Listener:** A listener is configured on a specific port (e.g., port 80 for HTTP) to accept incoming user traffic.
+4.  **(Implicit Step) Security Rules:** The lab will involve configuring the VCN's security lists to allow the necessary traffic:
+    -   Ingress traffic from the internet to the Load Balancer on port 80.
+    -   Egress traffic from the Load Balancer to the private subnet on port 80.
+    -   Ingress traffic in the private subnet from the Load Balancer on port 80.
