@@ -79,7 +79,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
     flexDirection: 'row',
     flexWrap: 'wrap',
-    gap: 8,
   },
   keyYearPill: {
     backgroundColor: '#1b1f2b',
@@ -88,6 +87,8 @@ const styles = StyleSheet.create({
     borderRadius: 999,
     paddingHorizontal: 10,
     paddingVertical: 5,
+    marginRight: 8,
+    marginBottom: 8,
   },
   keyYearText: {
     color: '#d8def0',
