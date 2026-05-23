@@ -11,7 +11,7 @@ const SectionCard = ({ title, items }) => (
   <View style={styles.card}>
     <Text style={styles.cardTitle}>{title}</Text>
     {items.map((item, idx) => (
-      <Text key={`${title}-${item}-${idx}`} style={styles.bulletItem}>
+      <Text key={`${title}-${item}-${idx}`} style={styles.bulletItem} accessibilityLabel={item}>
         • {item}
       </Text>
     ))}
@@ -25,6 +25,14 @@ const formatPinLabel = (pin) => {
     `${pin.latitude.toFixed(4)}, ${pin.longitude.toFixed(4)}`,
   ];
   return `• ${details.join(' • ')}`;
+};
+
+const formatPinAccessibilityLabel = (pin) => {
+  return [
+    pin.title,
+    pin.type.toUpperCase(),
+    `${pin.latitude.toFixed(4)}, ${pin.longitude.toFixed(4)}`,
+  ].join(', ');
 };
 
 const HomeScreen = () => {
@@ -62,7 +70,7 @@ const HomeScreen = () => {
       <View style={styles.card}>
         <Text style={styles.cardTitle}>Map Pins (Preview)</Text>
         {snapshot.mapPins.map((pin) => (
-          <Text key={pin.id} style={styles.pinText}>
+          <Text key={pin.id} style={styles.pinText} accessibilityLabel={formatPinAccessibilityLabel(pin)}>
             {formatPinLabel(pin)}
           </Text>
         ))}

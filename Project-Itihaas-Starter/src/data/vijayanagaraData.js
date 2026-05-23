@@ -82,9 +82,16 @@ export const vijayanagaraSnapshots = [
 ];
 
 export const getClosestSnapshot = (year) => {
-  return vijayanagaraSnapshots.reduce((closest, current) => {
+  let closest = vijayanagaraSnapshots[0];
+  let closestDiff = Math.abs(closest.year - year);
+
+  for (const current of vijayanagaraSnapshots) {
     const currentDiff = Math.abs(current.year - year);
-    const closestDiff = Math.abs(closest.year - year);
-    return currentDiff < closestDiff ? current : closest;
-  }, vijayanagaraSnapshots[0]);
+    if (currentDiff < closestDiff) {
+      closest = current;
+      closestDiff = currentDiff;
+    }
+  }
+
+  return closest;
 };
