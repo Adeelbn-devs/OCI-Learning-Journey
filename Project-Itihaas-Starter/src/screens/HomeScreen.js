@@ -11,7 +11,7 @@ const SectionCard = ({ title, items }) => (
   <View style={styles.card}>
     <Text style={styles.cardTitle}>{title}</Text>
     {items.map((item, idx) => (
-      <Text key={`${title}-${idx}`} style={styles.bulletItem}>
+      <Text key={`${title}-${item}-${idx}`} style={styles.bulletItem}>
         • {item}
       </Text>
     ))}

@@ -3,6 +3,8 @@ export const VIJAYANAGARA_TIMELINE_RANGE = {
   maxYear: 1565,
 };
 
+const HAMPI_COORDINATES = { latitude: 15.335, longitude: 76.46 };
+
 export const vijayanagaraSnapshots = [
   {
     year: 1500,
@@ -18,7 +20,7 @@ export const vijayanagaraSnapshots = [
       'Defensive fortification maintenance in strategic riverine zones.',
     ],
     mapPins: [
-      { id: 'hampi-1500', title: 'Hampi (Capital Core)', type: 'capital', latitude: 15.335, longitude: 76.46 },
+      { id: 'hampi-1500', title: 'Hampi (Capital Core)', type: 'capital', ...HAMPI_COORDINATES },
       { id: 'tungabhadra-1500', title: 'Tungabhadra Defensive Belt', type: 'frontier', latitude: 15.2, longitude: 76.6 },
     ],
   },
@@ -36,7 +38,7 @@ export const vijayanagaraSnapshots = [
       'Royal infrastructure and mandapa developments in imperial ceremonial zones.',
     ],
     mapPins: [
-      { id: 'hampi-1520', title: 'Hampi Royal Center', type: 'capital', latitude: 15.335, longitude: 76.46 },
+      { id: 'hampi-1520', title: 'Hampi Royal Center', type: 'capital', ...HAMPI_COORDINATES },
       { id: 'raichur-1520', title: 'Raichur Doab (Conflict Zone)', type: 'battle', latitude: 16.2, longitude: 77.37 },
       { id: 'tirupati-1520', title: 'Temple Patronage Network', type: 'monument', latitude: 13.6288, longitude: 79.4192 },
     ],
@@ -55,7 +57,7 @@ export const vijayanagaraSnapshots = [
       'Courtly architectural additions linked to elite patronage.',
     ],
     mapPins: [
-      { id: 'hampi-1545', title: 'Hampi Administrative Core', type: 'capital', latitude: 15.335, longitude: 76.46 },
+      { id: 'hampi-1545', title: 'Hampi Administrative Core', type: 'capital', ...HAMPI_COORDINATES },
       { id: 'penukonda-1545', title: 'Penukonda Strategic Node', type: 'fort', latitude: 14.0839, longitude: 77.5946 },
     ],
   },
@@ -74,7 +76,7 @@ export const vijayanagaraSnapshots = [
     ],
     mapPins: [
       { id: 'talikota-1565', title: 'Talikota Battlefield', type: 'battle', latitude: 16.4731, longitude: 76.31 },
-      { id: 'hampi-1565', title: 'Hampi Monument Zone', type: 'monument', latitude: 15.335, longitude: 76.46 },
+      { id: 'hampi-1565', title: 'Hampi Monument Zone', type: 'monument', ...HAMPI_COORDINATES },
     ],
   },
 ];
