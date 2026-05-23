@@ -19,7 +19,12 @@ const SectionCard = ({ title, items }) => (
 );
 
 const formatPinLabel = (pin) => {
-  return `• ${pin.title} • ${pin.type.toUpperCase()} • ${pin.latitude.toFixed(4)}, ${pin.longitude.toFixed(4)}`;
+  const details = [
+    pin.title,
+    pin.type.toUpperCase(),
+    `${pin.latitude.toFixed(4)}, ${pin.longitude.toFixed(4)}`,
+  ];
+  return `• ${details.join(' • ')}`;
 };
 
 const HomeScreen = () => {
@@ -27,7 +32,7 @@ const HomeScreen = () => {
 
   const snapshot = useMemo(() => getClosestSnapshot(selectedYear), [selectedYear]);
   const keyYears = useMemo(
-    () => vijayanagaraSnapshots.map((entry) => entry.year),
+    () => Array.from(new Set(vijayanagaraSnapshots.map((entry) => entry.year))),
     []
   );
 
