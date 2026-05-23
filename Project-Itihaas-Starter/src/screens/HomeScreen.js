@@ -18,6 +18,10 @@ const SectionCard = ({ title, items }) => (
   </View>
 );
 
+const formatPinLabel = (pin) => {
+  return `• ${pin.title} • ${pin.type.toUpperCase()} • ${pin.latitude.toFixed(4)}, ${pin.longitude.toFixed(4)}`;
+};
+
 const HomeScreen = () => {
   const [selectedYear, setSelectedYear] = useState(1520);
 
@@ -54,7 +58,7 @@ const HomeScreen = () => {
         <Text style={styles.cardTitle}>Map Pins (Preview)</Text>
         {snapshot.mapPins.map((pin) => (
           <Text key={pin.id} style={styles.pinText}>
-            • {pin.title} • {pin.type.toUpperCase()} • {pin.latitude.toFixed(4)}, {pin.longitude.toFixed(4)}
+            {formatPinLabel(pin)}
           </Text>
         ))}
         <Text style={styles.mapHint}>

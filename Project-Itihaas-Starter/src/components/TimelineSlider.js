@@ -28,8 +28,8 @@ const TimelineSlider = ({ minYear, maxYear, selectedYear, onYearChange, keyYears
       </View>
 
       <View style={styles.keyYearsRow}>
-        {keyYears.map((year) => (
-          <View key={year} style={styles.keyYearPill}>
+        {keyYears.map((year, index) => (
+          <View key={`keyYear-${year}-${index}`} style={styles.keyYearPill}>
             <Text style={styles.keyYearText}>{year}</Text>
           </View>
         ))}
